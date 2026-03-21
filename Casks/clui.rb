@@ -15,6 +15,12 @@ cask "clui" do
 
   app "Clui.app"
 
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/Clui.app"],
+                   sudo: false
+  end
+
   zap trash: [
     "~/Library/Application Support/Clui",
     "~/Library/Preferences/com.clui.app.plist",
