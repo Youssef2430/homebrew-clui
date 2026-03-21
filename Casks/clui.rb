@@ -2,9 +2,9 @@ cask "clui" do
   arch arm: "arm64", intel: ""
   folder = on_arch_conditional arm: "-arm64", intel: ""
 
-  version "0.1.4"
-  sha256 arm:   "9dfea854e9834b9f968d504140a5ab50b8e650ceddd7783e6a48a3f0e65829e0",
-         intel: "482c357b995e1f87dbc37a9030f5f946ee6bb23151cd5820b5f9d6384de0c038"
+  version "0.1.5"
+  sha256 arm:   "5e4788aa3ed859de4aa51ab9a1f09c59b32afd2b8ae4cfdb78bafda195e30e24",
+         intel: "038acf9dfcd8ef5bb5fd4ff475c0ab6420949707d99ca252eeeddb753ec2242c"
 
   url "https://github.com/Youssef2430/clui/releases/download/v#{version}/Clui-#{version}#{folder}.dmg"
   name "Clui"
