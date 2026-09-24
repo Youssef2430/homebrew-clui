@@ -1,22 +1,27 @@
 cask "clui" do
-  arch arm: "arm64", intel: ""
-  folder = on_arch_conditional arm: "-arm64", intel: ""
+  on_arm do
+    version "0.2.0"
+    sha256 "66bb26eb0709fe180d97d983f2c5a4bb0cc7ab9b382d56b933a544e5b4712243"
+    url "https://github.com/Youssef2430/clui/releases/download/v#{version}/GLUI-#{version}-arm64.dmg"
+    app "GLUI.app"
+  end
 
-  version "0.1.17"
-  sha256 arm:   "0b3fe6b0ac7df5d633b552b0d177848b00174258a20f4c477dc45adf81ffe0b2",
-         intel: "2b1accad204693b1a54e12a536f3e1a894c6f19c0c8c1bdade69809a77040829"
+  on_intel do
+    version "0.1.17"
+    sha256 "2b1accad204693b1a54e12a536f3e1a894c6f19c0c8c1bdade69809a77040829"
+    url "https://github.com/Youssef2430/clui/releases/download/v#{version}/Clui-#{version}.dmg"
+    app "Clui.app"
+    caveats "Intel support is deprecated. Clui v0.1.17 is the final Intel release."
+  end
 
-  url "https://github.com/Youssef2430/clui/releases/download/v#{version}/Clui-#{version}#{folder}.dmg"
-  name "Clui"
-  desc "Desktop UI for Claude Code"
+  name "GLUI"
+  desc "Desktop UI for Claude Code, Codex, and OpenCode"
   homepage "https://github.com/Youssef2430/clui"
 
   depends_on macos: ">= :ventura"
 
-  app "Clui.app"
-
   zap trash: [
-    "~/Library/Application Support/Clui",
+    "~/Library/Application Support/clui",
     "~/Library/Preferences/com.clui.app.plist",
     "~/Library/Caches/com.clui.app",
   ]
