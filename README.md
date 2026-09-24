@@ -1,16 +1,22 @@
-# Homebrew Tap for Clui
+# Homebrew Tap for GLUI
 
-Desktop UI for Claude Code.
+GLUI (Glue UI) brings Claude Code, Codex, and OpenCode into one macOS workspace.
 
 ## Install
 
-```bash
-brew tap Youssef2430/clui
-brew install --cask clui
+```sh
+brew tap Youssef2430/glui
+brew install --cask glui
 ```
 
 ## Update
 
-```bash
-brew upgrade --cask clui
+```sh
+brew upgrade --cask glui
 ```
+
+Apple Silicon receives GLUI v0.2.0 and later. Intel support is deprecated; Clui v0.1.17 remains the final Intel version.
+
+The legacy `clui` cask remains available and follows the same architecture policy. Existing installations can continue using `brew upgrade --cask clui`. To switch tokens, run `brew uninstall --cask clui` (without `--zap`), then `brew install --cask Youssef2430/glui/glui`; your preferences are preserved.
+
+[GLUI repository and releases](https://github.com/Youssef2430/glui)

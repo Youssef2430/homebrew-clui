@@ -1,4 +1,4 @@
-cask "clui" do
+cask "glui" do
   on_arm do
     version "0.2.0"
     sha256 "66bb26eb0709fe180d97d983f2c5a4bb0cc7ab9b382d56b933a544e5b4712243"
@@ -19,7 +19,7 @@ cask "clui" do
   homepage "https://github.com/Youssef2430/glui"
 
   depends_on macos: :ventura
-  conflicts_with cask: "glui"
+  conflicts_with cask: "clui"
 
   zap trash: [
     "~/Library/Application Support/clui",
